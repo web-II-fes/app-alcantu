@@ -1,0 +1,28 @@
+<h2>Crear persona</h2>
+<form [formGroup]='itemForm' (ngSubmit)=submit()>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Pepe" type="text" formControlName="nombre" >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Apellido</mat-label>
+        <input matInput placeholder="Perez" type="text" formControlName="apellido">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Edad</mat-label>
+        <input matInput placeholder="18" type="number" formControlName="edad">
+    </mat-form-field>
+
+    Status Formulario: {{itemForm.status}}
+    <button mat-raised-button>Guardar</button>
+
+    <div *ngFor = "let persona of personas">
+        <p> Nombre y Apellido: {{persona.nombre}} {{persona.apellido}} </p>
+        <p>Edad: {{persona.edad}} </p>
+        <button type = "button" (click)="editarPersona(persona)">Editar</button>
+        <button type = "button" (click)="borrarPersona(persona)">Borrar</button>
+    </div>
+</form>
