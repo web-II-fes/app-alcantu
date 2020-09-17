@@ -16,11 +16,14 @@ import { MatTableModule } from '@angular/material/table';
 
 import { PersonaComponent } from './persona/persona.component';
 import { PersonaService } from './servicios/persona.service';
+import { CursoService } from './servicios/curso.service';
+import { CursoComponent } from './curso/curso.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonaComponent
+    PersonaComponent,
+    CursoComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import { PersonaService } from './servicios/persona.service';
     MatTableModule,
     HttpClientModule
   ],
-  providers: [PersonaService],
+  providers: [PersonaService, CursoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,35 @@
+<h2>Crear curso</h2>
+<form [formGroup]='itemForm' (ngSubmit)=submit()>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre Curso</mat-label>
+        <input matInput placeholder="Matematica" type="text" formControlName="nombre" >
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Profesor</mat-label>
+        <input matInput placeholder="Pepe Perez" type="text" formControlName="profesor">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Año</mat-label>
+        <input matInput placeholder="2020" type="number" formControlName="anio">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Estado</mat-label>
+        <input matInput placeholder="2020" type="text" formControlName="estado">
+    </mat-form-field>
+
+    Status Formulario: {{itemForm.status}}
+    <button mat-raised-button>Guardar</button>
+
+    <div *ngFor = "let curso of cursos">
+        <p> Nombre Curso: {{curso.nombre}}</p>
+        <p> Profesor: {{curso.profesor}} </p>
+        <p> Año: {{curso.anio}}</p>
+        <p> Estado: {{curso.estado}} </p>
+        <button type = "button" (click)="editarCurso(curso)">Editar</button>
+        <button type = "button" (click)="borrarCurso(curso)">Borrar</button>
+    </div>
+</form>
