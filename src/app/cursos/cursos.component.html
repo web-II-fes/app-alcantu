@@ -1,0 +1,49 @@
+<mat-card>
+    <button mat-flat-button color="primary" routerLink="/crearCurso/new" routerLinkActive="active">Crear Curso</button>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!-- Curso Column -->
+        <ng-container matColumnDef="curso">
+            <th mat-header-cell *matHeaderCellDef> Curso </th>
+            <td mat-cell *matCellDef="let element"> {{element.nombreCurso | titlecase}} </td>
+        </ng-container>
+    
+        <!-- Profesor Column -->
+        <ng-container matColumnDef="profesor">
+            <th mat-header-cell *matHeaderCellDef> Apellido </th>
+            <td mat-cell *matCellDef="let element"> {{element.profesor | titlecase}} </td>
+        </ng-container>
+    
+        <!-- Anio Column -->
+        <ng-container matColumnDef="anio">
+            <th mat-header-cell *matHeaderCellDef> Año </th>
+            <td mat-cell *matCellDef="let element"> {{element.anio}} </td>
+        </ng-container>
+    
+        <!-- Estado Column -->
+        <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef> Estado </th>
+            <td mat-cell *matCellDef="let element"> {{element.estado | titlecase}} </td>
+        </ng-container>
+
+        <!-- Editar Column -->
+        <ng-container matColumnDef="editar">
+            <th mat-header-cell *matHeaderCellDef> Editar </th>
+            <td mat-cell *matCellDef="let element" >
+                <button mat-button (click)="editarCurso(element._id)">Editar</button>
+            </td>
+        </ng-container>
+
+        <!-- Borrar Column -->
+        <ng-container matColumnDef="borrar">
+            <th mat-header-cell *matHeaderCellDef> Borrar </th>
+            <td mat-cell *matCellDef="let element" >
+                <button mat-button (click)="borrarCurso(element._id)">Borrar</button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</mat-card>

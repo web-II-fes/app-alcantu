@@ -6,17 +6,22 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class CursoService {
 
+  private cursoUrl = 'http://localhost:3002/api/modules/cursos/';
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }
-  private cursoUrl = 'http://localhost:3002/api/modules/cursos/';
 
   constructor( private httpClient: HttpClient ) {}
 
   getCursos(){
-    return this.httpClient.get(this.cursoUrl + 'curso');
+    return this.httpClient.get(this.cursoUrl + 'cursos');
+  }
+
+  getCursoById( idCurso: String ){
+    return this.httpClient.get(this.cursoUrl + 'cursoId/' + idCurso)
   }
 
   guardarCurso( curso: any ){
