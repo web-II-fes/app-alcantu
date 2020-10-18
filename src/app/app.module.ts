@@ -21,6 +21,7 @@ import { CursoService } from './servicios/curso.service';
 import { CursoComponent } from './curso/curso.component';
 import { CursosComponent } from './cursos/cursos.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
