@@ -18,6 +18,10 @@ export class PersonaService {
     return this.httpClient.get(this.personaUrl + 'persona');
   }
 
+  getPersonaById( idPersona: String ){
+    return this.httpClient.get(this.personaUrl + 'personaId/' + idPersona)
+  }
+
   guardarPersona( persona: any ){
     return this.httpClient.post(this.personaUrl + 'persona', JSON.stringify(persona), this.httpOptions);
   }

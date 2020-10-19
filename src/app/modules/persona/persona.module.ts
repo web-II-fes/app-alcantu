@@ -3,34 +3,34 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
-import { AuthRoutingModule } from './auth-routing.module';
-import { LoginComponent } from './login/login.component';
-import { RegistroComponent } from './registro/registro.component';
+import { PersonaRoutingModule } from './persona-routing.module';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 
-import { AuthService } from './servicios/auth.service';
-import { TokenStorageService } from './servicios/token-storage.service';
-import { UserService } from './servicios/user.service';
+import { PersonaService } from './servicios/persona.service';
+import { PersonaComponent } from './persona/persona.component';
+import { PersonasComponent } from './personas/personas.component';
 
 @NgModule({
     declarations: [
-        LoginComponent,
-        RegistroComponent
+        PersonaComponent,
+        PersonasComponent
     ],
     imports: [
         CommonModule,
         HttpClientModule,
         ReactiveFormsModule,
-        AuthRoutingModule,
+        PersonaRoutingModule,
         MatInputModule,
         MatFormFieldModule,
         MatButtonModule,
-        MatCardModule
+        MatCardModule,
+        MatTableModule
     ],
-    providers: [ AuthService, TokenStorageService, UserService ]
+    providers: [ PersonaService ]
   })
-  export class AuthModule { }
+  export class PersonaModule { }

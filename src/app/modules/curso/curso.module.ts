@@ -3,34 +3,34 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
-import { AuthRoutingModule } from './auth-routing.module';
-import { LoginComponent } from './login/login.component';
-import { RegistroComponent } from './registro/registro.component';
+import { CursoRoutingModule } from './curso-routing.module';
 
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 
-import { AuthService } from './servicios/auth.service';
-import { TokenStorageService } from './servicios/token-storage.service';
-import { UserService } from './servicios/user.service';
+import { CursoService } from './servicios/curso.service';
+import { CursosComponent } from './cursos/cursos.component';
+import { CursoComponent } from './curso/curso.component';
 
 @NgModule({
     declarations: [
-        LoginComponent,
-        RegistroComponent
+        CursoComponent,
+        CursosComponent
     ],
     imports: [
         CommonModule,
         HttpClientModule,
         ReactiveFormsModule,
-        AuthRoutingModule,
+        CursoRoutingModule,
         MatInputModule,
         MatFormFieldModule,
         MatButtonModule,
-        MatCardModule
+        MatCardModule,
+        MatTableModule
     ],
-    providers: [ AuthService, TokenStorageService, UserService ]
+    providers: [ CursoService ]
   })
-  export class AuthModule { }
+  export class CursoModule { }

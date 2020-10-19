@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { CursoService } from '../servicios/curso.service';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-cursos',
   templateUrl: './cursos.component.html',
@@ -26,7 +25,7 @@ export class CursosComponent implements OnInit {
   }
 
   editarCurso(idCurso){
-    this.router.navigate(["/crearCurso/" + idCurso]);
+    this.router.navigate(["../curso/crearCurso/" + idCurso]);
   }
 
   borrarCurso(idCurso){

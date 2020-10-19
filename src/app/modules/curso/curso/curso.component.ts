@@ -53,6 +53,6 @@ export class CursoComponent implements OnInit {
         let cursoNuevo = curso;
       });
     }
-    this.router.navigate(['/cursos']);
+    this.router.navigate(['../curso/cursos']);
   }
 }

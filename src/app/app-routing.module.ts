@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-// import { CursoComponent } from './curso/curso.component';
-import { CursosComponent } from './cursos/cursos.component';
-
 const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./modules/auth/auth.module').then((m) => m.AuthModule)
   },
-  // { path: 'crearCurso', component: CursoComponent },
-  // { path: 'crearCurso/:id', component: CursoComponent },
-  { path: 'cursos', component: CursosComponent }
+  {
+    path: 'persona',
+    loadChildren: () => import('./modules/persona/persona.module').then((m) => m.PersonaModule)
+  },
+  {
+    path: 'curso',
+    loadChildren: () => import('./modules/curso/curso.module').then((m) => m.CursoModule)
+  },
+
 ];
 
 @NgModule({

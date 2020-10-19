@@ -3,27 +3,26 @@
     <mat-card-content>
         <form [formGroup]='itemForm' (ngSubmit)=submit()>
 
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="legacy">
                 <mat-label>Nombre Curso</mat-label>
                 <input matInput placeholder="Nombre del curso" type="text" formControlName="nombreCurso" >
             </mat-form-field>
 
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="legacy">
                 <mat-label>Profesor</mat-label>
                 <input matInput placeholder="Nombre del profesor" type="text" formControlName="profesor">
             </mat-form-field>
 
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="legacy">
                 <mat-label>Año</mat-label>
                 <input matInput placeholder="Anio del curso" type="number" formControlName="anio">
             </mat-form-field>
 
-            <mat-form-field appearance="outline">
+            <mat-form-field appearance="legacy">
                 <mat-label>Estado</mat-label>
                 <input matInput placeholder="Estado del curso" type="text" formControlName="estado">
             </mat-form-field>
 
-            Status Formulario: {{itemForm.status}}
             <button mat-raised-button>Guardar</button>
         </form>
     </mat-card-content>
