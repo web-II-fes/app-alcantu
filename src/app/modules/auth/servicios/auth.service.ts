@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +18,26 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
+  logueado: boolean;
+
+  public autenticado(){
+    let autenticacion = localStorage.getItem('logueado');
+    if(autenticacion === 'true'){
+      return true
+    } else {
+      return false;
+    }
+  }
+
   login(credenciales): Observable<any>  {
     return this.http.post(
       this.authUrl + 'login',
       { username: credenciales.username, password: credenciales.password },
-      this.httpOptions
-    );
+      this.httpOptions).pipe(map(aux => {
+        this.logueado = true; 
+        localStorage.setItem('logueado', this.logueado.toString());
+        return aux;
+      }));
   }
 
   registro(credenciales): Observable<any>  {
