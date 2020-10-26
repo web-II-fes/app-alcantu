@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ArraysComponent } from './arrays/arrays';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
     path: 'curso',
     loadChildren: () => import('./modules/curso/curso.module').then((m) => m.CursoModule)
   },
+  { path: 'arrays', component: ArraysComponent },
 
 ];
 

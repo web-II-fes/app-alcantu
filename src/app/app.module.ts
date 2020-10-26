@@ -6,9 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ArraysComponent } from './arrays/arrays';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ArraysComponent
   ],
   imports: [
     BrowserModule,
